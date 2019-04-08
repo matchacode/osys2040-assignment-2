@@ -1,3 +1,11 @@
+const express = require('express')
+const createError = require('http-errors')
+const Chat = require('../model/chat')
+const Likes = require('../model/like')
+
+const router = express.Router()
+
+router.get('/chat', async function getMessages(req, res, next) {
 const messages = await Chat.getMessages()
 
   // TODO: create like model
